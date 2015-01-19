@@ -61,6 +61,7 @@
 // Layout
 // Each section of the document has it's own partial seperated out to improve
 // developer experience. Additionally, grids can be declared in layouts as well.
+@import "fonts/steelfish";
 @import "layout/header";
 @import "layout/main";
 @import "layout/aside";

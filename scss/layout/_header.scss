@@ -1,1 +1,52 @@
 // Non-modular or client styles for .l-header region.
+
+
+header.l-header{
+	background-color:$black;
+	text-align:center;
+
+	.top-bar-section{
+		li{
+			a{
+				margin-bottom:3px;
+				&:hover{
+					border-bottom:3px solid $primary-color;
+					margin-bottom:0;
+				}
+			}
+			a.active{
+				border-bottom:3px solid $primary-color;
+				margin-bottom:0;
+			}
+		}
+	}
+}
+
+.front{
+	.l-main{
+		background-image:url(../images/main-bg.jpg);
+		background-size: cover;
+		background-color:#000d10;
+	}
+}
+
+.l-main{
+	padding-top:100px;
+	.l-header-region{
+		text-align:center;
+		margin-bottom:100px;
+		p, h2{
+			color:#b6d4d6;
+		}
+		p{
+			text-transform: uppercase;
+			letter-spacing: 5px;
+			margin-bottom:0;
+		}
+		h2{
+			font-style: italic;
+			font-weight: 700;
+			font-size: 4rem;
+		}
+	}
+}
