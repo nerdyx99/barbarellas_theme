@@ -4,13 +4,17 @@
  * Implements template_preprocess_html().
  *
  */
-//function STARTER_preprocess_html(&$variables) {
+function STARTER_preprocess_html(&$variables) {
+  drupal_add_css('http://fonts.googleapis.com/css?family=Open+Sans:400,300,700', array('type' => 'external'));
+
+  drupal_add_css('http://fonts.googleapis.com/css?family=Alegreya:700italic,400,700,900', array('type' => 'external'));
+
 //  // Add conditional CSS for IE. To use uncomment below and add IE css file
 //  drupal_add_css(path_to_theme() . '/css/ie.css', array('weight' => CSS_THEME, 'browsers' => array('!IE' => FALSE), 'preprocess' => FALSE));
 //
 //  // Need legacy support for IE downgrade to Foundation 2 or use JS file below
 //  // drupal_add_js('http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js', 'external');
-//}
+}
 
 /**
  * Implements template_preprocess_page
@@ -200,3 +204,27 @@ function THEMENAME_preprocess_views_view_fields(&$variables) {
 //    }
 //  }
 //}
+
+function barbarellas_links__topbar_main_menu($variables) {
+  // We need to fetch the links ourselves because we need the entire tree.
+  $links = menu_tree_output(menu_tree_all_data(variable_get('menu_main_links_source', 'main-menu')));
+  $output = _barbarellas_links($links);
+  $variables['attributes']['class'][] = 'right';
+
+  return '<ul' . drupal_attributes($variables['attributes']) . '>' . $output . '</ul>';
+}
+
+/**
+ * Implements theme_links() targeting the secondary menu specifically.
+ * Formats links for Top Bar http://foundation.zurb.com/docs/components/top-bar.html
+ */
+function barbarellas_links__topbar_secondary_menu($variables) {
+  // We need to fetch the links ourselves because we need the entire tree.
+  $links = menu_tree_output(menu_tree_all_data(variable_get('menu_secondary_links_source', 'user-menu')));
+  $output = _barbarellas_links($links);
+  $variables['attributes']['class'][] = 'right';
+
+  return '<ul' . drupal_attributes($variables['attributes']) . '>' . $output . '</ul>';
+}
+
+
