@@ -86,7 +86,10 @@ regions[header]              = Header
 regions[help]                = Help
 regions[highlighted]         = Highlighted
 regions[featured]            = Featured
+
+regions[pre_content]		 = Pre-content
 regions[content]             = Content
+regions[post_content]		 = Post-content
 
 regions[sub_section_1]		 = Sub Section 1
 regions[sub_section_2]		 = Sub Section 2

@@ -68,6 +68,14 @@
     (function ($, Drupal, window, document, undefined) {
       $(document).foundation();
 
+      $('.flexslider').flexslider({
+        animation: "fade",
+        controlNav: "false",
+        directionNav: "false",
+        animationSpeed: "3000",
+        slideshowSpeed: "5000"
+      });
+
       ///////////////
 
       // var feed = new Instafeed({

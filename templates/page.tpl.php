@@ -34,11 +34,16 @@
     <?php endif; ?>
   </header>
   <!--/.l-header -->
+  <?php if($is_front): ?>
+    <div class="flexslider">
+      <ul class="slides">
+        <li><img src="<?php echo $base_path . $path_to_barbarellas; ?>/images/main-bg-01.jpg"></li>
+        <li><img src="<?php echo $base_path . $path_to_barbarellas; ?>/images/main-bg-02.jpg"></li>
+      </ul>
+    </div>
+  <?php endif;?>
 
   <main role="main" class="l-main">
-
-    
-
     <?php if ($messages && !$zurb_foundation_messages_modal): ?>
       <!--/.l-messages -->
       <section class="l-messages row">
@@ -109,7 +114,15 @@
           </ul>
         <?php endif; ?>
         <?php if(!$is_front):?>
+          <?php if (!empty($page['pre_content'])): ?>
+            <?php print render($page['pre_content']); ?>
+          <?php endif;?>
+          
           <?php print render($page['content']); ?>
+
+          <?php if (!empty($page['post_content'])): ?>
+            <?php print render($page['post_content']); ?>
+          <?php endif;?>
         <?php endif; ?>
 
         
