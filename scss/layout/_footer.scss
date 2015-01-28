@@ -1,1 +1,55 @@
 // Non-modular or client styles for .l-footer region.
+
+
+.l-footer-columns{
+	background-image:url(../images/footer-bg.jpg);
+	background-size:cover;
+	padding:100px 0;
+	font-size: 0.8rem;
+	color:darken($white, 30%);
+	h2{
+		text-transform: uppercase;
+		font-size: 1rem;
+		border-bottom:1px solid darken($white, 30%);
+		padding-bottom:10px;
+		margin-bottom:20px;
+		color:$white;
+	}
+	p, li, a{
+		color:darken($white, 30%);
+		font-size: 0.8rem;
+	}
+	a{
+		@include transition;
+		&:hover{
+			color:$white;
+		}
+	}
+	.fa{
+		color:$white;
+		font-size: 1.2rem;
+	}
+	.menu{
+		list-style: none;
+		margin-left: 0;
+		li{
+			margin-bottom:10px;
+			text-transform: uppercase;
+		}
+	}
+
+	.footer-first{
+		img{
+			height:43px;
+			margin-right:10px;
+		}
+	}
+}
+
+.l-footer{
+	background-color: $black;
+	padding:50px 0;
+	color:darken($white, 30%);
+	text-align:center;
+	font-size: 0.8rem;
+}

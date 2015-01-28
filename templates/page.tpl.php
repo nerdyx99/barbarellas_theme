@@ -21,9 +21,6 @@
               <?php if ($top_bar_main_menu) :?>
                 <?php print $top_bar_main_menu; ?>
               <?php endif; ?>
-              <?php //if ($top_bar_secondary_menu) :?>
-                <?php //print $top_bar_secondary_menu; ?>
-              <?php //endif; ?>
             </section>
           </nav>
         </div>
@@ -114,68 +111,95 @@
         <?php if(!$is_front):?>
           <?php print render($page['content']); ?>
         <?php endif; ?>
+
+        
+
       </div>
       <!--/.main region -->
+      <?php if (!empty($page['sidebar_first'])): ?>
+        <aside role="complementary" class="<?php print $sidebar_first_grid; ?> sidebar-first columns sidebar">
+          <?php print render($page['sidebar_first']); ?>
+        </aside>
+      <?php endif; ?>
+
+      <?php if (!empty($page['sidebar_second'])): ?>
+        <aside role="complementary" class="<?php print $sidebar_sec_grid; ?> sidebar-second columns sidebar">
+          <div class="instagram-block">
+            <h2><img class="" src="<?php echo $base_path . $path_to_barbarellas?>/images/icon-instagram.png">&nbsp;&nbsp;#barbarellasvipgirls</h2>
+            <div id="instafeed"></div>  
+          </div>
+          <?php print render($page['sidebar_second']); ?>
+        </aside>
+      <?php endif; ?>
     </div>
-    
+    <!--/.row -->
 
-    <?php if (!empty($page['sidebar_first'])): ?>
-      <aside role="complementary" class="<?php print $sidebar_first_grid; ?> sidebar-first columns sidebar">
-        <?php print render($page['sidebar_first']); ?>
-      </aside>
-    <?php endif; ?>
-
-    <?php if (!empty($page['sidebar_second'])): ?>
-      <aside role="complementary" class="<?php print $sidebar_sec_grid; ?> sidebar-second columns sidebar">
-        <?php print render($page['sidebar_second']); ?>
-      </aside>
-    <?php endif; ?>
+    <?php if($is_front):?>
+      <div class="sub-section">
+        <div class="row">
+          <div class="medium-4 columns">
+            <?php print render($page['sub_section_1']); ?>
+          </div>
+          <div class="medium-4 columns">
+            <?php print render($page['sub_section_2']); ?>
+          </div>
+          <div class="medium-4 columns">
+            <h2><img class="" src="<?php echo $base_path . $path_to_barbarellas?>/images/icon-instagram.png">&nbsp;&nbsp;#barbarellasvipgirls</h2>
+            <div id="instafeed"></div>
+            
+          </div>
+        </div>  
+      </div>
+    <?php endif;?>
   </main>
   <!--/.main-->
 
   <?php if (!empty($page['footer_firstcolumn']) || !empty($page['footer_secondcolumn']) || !empty($page['footer_thirdcolumn']) || !empty($page['footer_fourthcolumn'])): ?>
     <!--.footer-columns -->
-    <section class="row l-footer-columns">
-      <?php if (!empty($page['footer_firstcolumn'])): ?>
-        <div class="footer-first large-3 columns">
-          <?php print render($page['footer_firstcolumn']); ?>
-        </div>
-      <?php endif; ?>
-      <?php if (!empty($page['footer_secondcolumn'])): ?>
-        <div class="footer-second large-3 columns">
-          <?php print render($page['footer_secondcolumn']); ?>
-        </div>
-      <?php endif; ?>
-      <?php if (!empty($page['footer_thirdcolumn'])): ?>
-        <div class="footer-third large-3 columns">
-          <?php print render($page['footer_thirdcolumn']); ?>
-        </div>
-      <?php endif; ?>
-      <?php if (!empty($page['footer_fourthcolumn'])): ?>
-        <div class="footer-fourth large-3 columns">
-          <?php print render($page['footer_fourthcolumn']); ?>
-        </div>
-      <?php endif; ?>
-    </section>
+    <div class="l-footer-columns">
+      <section class="row">
+        <?php if (!empty($page['footer_firstcolumn'])): ?>
+          <div class="footer-first large-4 columns">
+            <?php print render($page['footer_firstcolumn']); ?>
+          </div>
+        <?php endif; ?>
+        <?php if (!empty($page['footer_secondcolumn'])): ?>
+          <div class="footer-second large-4 columns">
+            <?php print render($page['footer_secondcolumn']); ?>
+          </div>
+        <?php endif; ?>
+        <?php if (!empty($page['footer_thirdcolumn'])): ?>
+          <div class="footer-third large-4 columns">
+            <?php print render($page['footer_thirdcolumn']); ?>
+          </div>
+        <?php endif; ?>
+      </section>  
+    </div>
+    
     <!--/.footer-columns-->
   <?php endif; ?>
 
   <!--.l-footer-->
-  <footer class="l-footer panel row" role="contentinfo">
-    <?php if (!empty($page['footer'])): ?>
-      <div class="footer large-12 columns">
-        <?php print render($page['footer']); ?>
-      </div>
-    <?php endif; ?>
+  <footer class="l-footer" role="contentinfo">
+    <div class="row">
+      <?php if (!empty($page['footer'])): ?>
+        <div class="footer large-12 columns">
+          <?php print render($page['footer']); ?>
+        </div>
+      <?php endif; ?>
 
-    <?php if ($site_name) :?>
-      <div class="copyright large-12 columns">
-        &copy; <?php print date('Y') . ' ' . check_plain($site_name) . ' ' . t('All rights reserved.'); ?>
-      </div>
-    <?php endif; ?>
+      <?php if ($site_name) :?>
+        <div class="copyright large-12 columns">
+          &copy; <?php print date('Y') . ' ' . check_plain($site_name) . ' ' . t('All rights reserved.'); ?>
+        </div>
+      <?php endif; ?>
+    </div>
   </footer>
   <!--/.footer-->
 
   <?php if ($messages && $zurb_foundation_messages_modal): print $messages; endif; ?>
 </div>
 <!--/.page -->
+
+
+

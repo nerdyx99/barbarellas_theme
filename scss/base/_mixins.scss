@@ -1,2 +1,8 @@
 // @file
 // Place your mixins here. Feel free to roll your own mixins.
+
+@mixin transition{
+	-webkit-transition: all 300ms ease-out;
+	-moz-transition: all 300ms ease-out;
+	transition: all 300ms ease-out;
+}

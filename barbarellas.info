@@ -29,6 +29,7 @@ base theme = zurb_foundation
 ; For CSS users, load the app.css file:
 stylesheets[all][] = css/app.css
 ; Comment the app.css file (above) if you're using sass to preprocess css:
+stylesheets[all][] = node_modules/font-awesome/css/font-awesome.min.css
 stylesheets[all][] = css/STARTER.css
 
 ; Block loading of foundation.min.css from the base theme. This file should either
@@ -62,10 +63,12 @@ scripts[] = js/foundation.min.js
 ;scripts[] = js/foundation/foundation.reveal.js
 ;scripts[] = js/foundation/foundation.section.js
 ;scripts[] = js/foundation/foundation.tooltips.js
-;scripts[] = js/foundation/foundation.topbar.js
+scripts[] = js/foundation/foundation.topbar.js
 
 ; Theme scripts.
 ; This file is empty, just uncomment this line and start editing!
+scripts[] = js/instafeed.min.js
+scripts[] = js/jquery.flexslider-min.js
 scripts[] = js/scripts.js
 
 ; This section lists the regions defined in the page.tpl.php. The name in
@@ -84,15 +87,17 @@ regions[help]                = Help
 regions[highlighted]         = Highlighted
 regions[featured]            = Featured
 regions[content]             = Content
+
+regions[sub_section_1]		 = Sub Section 1
+regions[sub_section_2]		 = Sub Section 2
+regions[sub_section_3]		 = Sub Section 3
+
 regions[sidebar_first]       = Left Sidebar
 regions[sidebar_second]      = Right Sidebar
-regions[triptych_first]      = Callout one
-regions[triptych_middle]     = Callout two
-regions[triptych_last]       = Callout three
+
 regions[footer_firstcolumn]  = Footer one
 regions[footer_secondcolumn] = Footer two
 regions[footer_thirdcolumn]  = Footer three
-regions[footer_fourthcolumn] = Footer four
 regions[footer]              = Footer
 
 ; Various page elements output by the theme can be toggled on and off. The

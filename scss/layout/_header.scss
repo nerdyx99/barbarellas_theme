@@ -4,23 +4,8 @@
 header.l-header{
 	background-color:$black;
 	text-align:center;
-
-	.top-bar-section{
-		li{
-			a{
-				margin-bottom:3px;
-				&:hover{
-					border-bottom:3px solid $primary-color;
-					margin-bottom:0;
-				}
-			}
-			a.active{
-				border-bottom:3px solid $primary-color;
-				margin-bottom:0;
-			}
-		}
-	}
 }
+
 
 .front{
 	.l-main{
@@ -47,6 +32,55 @@ header.l-header{
 			font-style: italic;
 			font-weight: 700;
 			font-size: 4rem;
+		}
+	}
+}
+
+// MEDIUM SCREENS AND DOWN
+@media only screen and (max-width: 40em) { 
+	.top-bar.expanded .toggle-topbar a{
+		color:$white;
+	}
+	.top-bar.expanded .toggle-topbar a span{
+		box-shadow:none;
+	}
+	.top-bar{
+		ul.title-area{
+			margin-bottom:40px;
+			li{
+				margin-top:0!important;
+			}
+		}
+	}
+}
+
+// MEDIUM SCREENS AND UP
+@media only screen and (min-width: 40.063em) { 
+	
+	header.l-header{
+		.top-bar-section{
+			ul{
+				width: 100%;
+				text-align: center;
+				li{
+					display: inline-block;
+					float: none;
+					padding:0 20px;
+					a{
+						margin-bottom:3px;
+						text-transform: uppercase;
+						font-size: 0.7rem;
+						&:hover{
+							border-bottom:3px solid $primary-color;
+							margin-bottom:0;
+						}
+					}
+					a.active{
+						border-bottom:3px solid $primary-color;
+						margin-bottom:0;
+					}
+				}	
+			}
 		}
 	}
 }
