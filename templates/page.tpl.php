@@ -41,6 +41,7 @@
         <li><img src="<?php echo $base_path . $path_to_barbarellas; ?>/images/main-bg-02.jpg"></li>
       </ul>
     </div>
+
   <?php endif;?>
 
   <main role="main" class="l-main">
@@ -66,7 +67,7 @@
 
     <?php if (!empty($page['header'])): ?>
       <!--.l-header-region -->
-      <div class="l-header-region">
+      <div class="l-header-region animate">
         <section class="row">
           <div class="large-12 columns">
             <?php print render($page['header']); ?>
@@ -85,7 +86,7 @@
         <?php endif; ?>
         <?php if (!empty($page['featured'])): ?>
           <!--/.featured -->
-          <section class="l-featured row">
+          <section class="l-featured row animate">
             <div class="large-12 columns">
               <?php print render($page['featured']); ?>
             </div>
@@ -150,13 +151,13 @@
     <?php if($is_front):?>
       <div class="sub-section">
         <div class="row">
-          <div class="medium-4 columns">
+          <div class="medium-4 columns animate">
             <?php print render($page['sub_section_1']); ?>
           </div>
-          <div class="medium-4 columns">
+          <div class="medium-4 columns animate">
             <?php print render($page['sub_section_2']); ?>
           </div>
-          <div class="medium-4 columns">
+          <div class="medium-4 columns animate last">
             <h2><img class="" src="<?php echo $base_path . $path_to_barbarellas?>/images/icon-instagram.png">&nbsp;&nbsp;#barbarellasvipgirls</h2>
             <div id="instafeed"></div>
             
@@ -172,18 +173,23 @@
     <div class="l-footer-columns">
       <section class="row">
         <?php if (!empty($page['footer_firstcolumn'])): ?>
-          <div class="footer-first large-4 columns">
+          <div class="footer-first medium-3 columns">
             <?php print render($page['footer_firstcolumn']); ?>
           </div>
         <?php endif; ?>
         <?php if (!empty($page['footer_secondcolumn'])): ?>
-          <div class="footer-second large-4 columns">
+          <div class="footer-second medium-3 columns">
             <?php print render($page['footer_secondcolumn']); ?>
           </div>
         <?php endif; ?>
         <?php if (!empty($page['footer_thirdcolumn'])): ?>
-          <div class="footer-third large-4 columns">
+          <div class="footer-third medium-3 columns">
             <?php print render($page['footer_thirdcolumn']); ?>
+          </div>
+        <?php endif; ?>
+        <?php if (!empty($page['footer_fourthcolumn'])): ?>
+          <div class="footer-fourth medium-3 columns">
+            <?php print render($page['footer_fourthcolumn']); ?>
           </div>
         <?php endif; ?>
       </section>  

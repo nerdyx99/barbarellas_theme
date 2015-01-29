@@ -64,6 +64,7 @@
   <?php print $page; ?>
   <?php print $page_bottom; ?>
   <?php print _zurb_foundation_add_reveals(); ?>
+
   <script>
     (function ($, Drupal, window, document, undefined) {
       $(document).foundation();
@@ -72,8 +73,22 @@
         animation: "fade",
         controlNav: "false",
         directionNav: "false",
-        animationSpeed: "3000",
-        slideshowSpeed: "5000"
+        animationSpeed: 1800,
+        slideshowSpeed: 5000
+      });
+
+      $(".animate").each(function(){
+        $(this).bind('inview', function (event, visible) {
+          var $this = $(this),
+            $animation = ( $this.data("animation") !== undefined ) ? $this.data("animation") : "fadeIn";
+            $delay = ( $this.data("delay") !== undefined ) ? $this.data("delay") : 300;
+            
+            if (visible == true) {
+              setTimeout(function() { $this.addClass($animation); },$delay);
+            }else{
+              setTimeout(function() { $this.removeClass($animation); },$delay);
+            }
+        });
       });
 
       ///////////////

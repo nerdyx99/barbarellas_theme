@@ -68,7 +68,8 @@ scripts[] = js/foundation/foundation.topbar.js
 ; Theme scripts.
 ; This file is empty, just uncomment this line and start editing!
 scripts[] = js/instafeed.min.js
-scripts[] = js/jquery.flexslider-min.js
+scripts[] = js/jquery.flexslider.js
+scripts[] = js/jquery.inview.js
 scripts[] = js/scripts.js
 
 ; This section lists the regions defined in the page.tpl.php. The name in
@@ -101,6 +102,7 @@ regions[sidebar_second]      = Right Sidebar
 regions[footer_firstcolumn]  = Footer one
 regions[footer_secondcolumn] = Footer two
 regions[footer_thirdcolumn]  = Footer three
+regions[footer_fourthcolumn] = Footer Fourth
 regions[footer]              = Footer
 
 ; Various page elements output by the theme can be toggled on and off. The
