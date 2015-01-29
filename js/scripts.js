@@ -11,6 +11,8 @@
     		$(this).find('.fieldset-wrapper').slideToggle();
     	});
 
+ 		$('.highlight .views-row-1 a').attr('href','/dev/barbarellas/gallery');
+
     }
   };
 
