@@ -4,6 +4,7 @@
 .l-footer-columns{
 	background-image:url(../images/footer-bg.jpg);
 	background-size:cover;
+	background-position:top right;
 	padding:100px 0;
 	font-size: 0.8rem;
 	color:darken($white, 30%);
@@ -39,10 +40,28 @@
 	}
 
 	.footer-first{
-		img{
-			height:43px;
-			margin-right:10px;
+		a{
+			img{
+				height:43px;
+				//margin-right:10px;
+			}
+			@include transition;
+			&:hover{
+				opacity: 0.8;
+				img{
+					opacity:0.8;
+				}
+			}
 		}
+		ul.inline-list{
+			li{
+				margin-left:0.5rem;
+				&:first-child{
+					margin-left:1.375rem;
+				}
+			}
+		}
+		
 	}
 }
 
@@ -52,4 +71,29 @@
 	color:darken($white, 30%);
 	text-align:center;
 	font-size: 0.8rem;
+	
+}
+
+.footer-first{
+
+}
+
+.footer-third{
+	h3{
+		font-size: 0.8rem;
+		margin-bottom: 0;
+		text-transform: uppercase;
+		font-family: $body-font-family;
+		font-weight:700;
+		color:$white;
+	}
+}
+
+.footer-fourth{
+	.small-2{
+		width:9.66667%;
+	}
+	.small-10{
+		width:87.33333%;
+	}
 }

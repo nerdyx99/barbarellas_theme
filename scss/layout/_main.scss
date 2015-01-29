@@ -5,13 +5,35 @@
 	color:#000;
 }
 
+// .cb-slideshow {
+// 	top: 300px!important;
+// 	position:absolute!important;
+// 	z-index:-1;
+// 	li{
+// 		//margin-top: 300px;
+// 		//top: 300px;
+// 		span{
+// 			//margin-top: 300px;
+// 		}
+// 	}
+// }
+// .cb-slideshow:after{
+// 	position: absolute!important;
+// 	z-index: -1;
+// }
+
+body.front{
+	background-color:#03010E;
+}	
+
+
 
 .l-main{
 	.highlight{
 		.views-row{
-			border:1px solid lighten($black, 20%);
+			//border:1px solid lighten($black, 20%);
 			position: relative;
-			@include transition;
+			//@include transition;
 			&:hover{
 				.views-field-field-image{
 					img{
@@ -19,6 +41,20 @@
 						max-width:110%!important;
 						margin-left:-5%;
 						margin-top:-5%;
+						opacity: 0.4;
+
+					}
+				}
+				.views-field-title{
+					opacity: 1;
+					&:hover{
+						opacity:1;
+					}
+					a{
+						opacity: 1;
+						&:hover{
+							opacity:1;
+						}
 					}
 				}
 			}
@@ -26,18 +62,11 @@
 				@include transition;
 				overflow: hidden;
 				height:250px;
-				border:1px solid lighten($black, 20%);
-				&:hover{
-					//opacity:0.6;
-				}
+				border:2px solid #3e3f51;
+				background-color:$black;
+				z-index: 1;
 				img{
 					@include transition;
-					&:hover{
-						width:110%!important;
-						max-width:110%!important;
-						margin-left:-5%;
-						margin-top:-5%;
-					}
 				}
 			}
 			.views-field-title{
@@ -46,6 +75,11 @@
 				text-align: center;
 				top:50%;
 				margin-top:-25px;
+				opacity: 1;
+				z-index: 2;
+				&:hover{
+					opacity:1;
+				}
 				a{
 					padding:10px 20px;
 					border:3px solid $white;
@@ -54,10 +88,9 @@
 					font-family: 'steelfishregular', sans-serif;
 					font-size: 1.6rem;
 					text-transform: uppercase;
-					@include transition;
+					opacity: 1;
 					&:hover{
-						//background-color:rgba(0,0,0,0.6);
-						//border:3px solid $black;
+						opacity:1;
 					}
 				}
 			}
@@ -95,14 +128,14 @@
 		h2.block-title{
 			margin-top: -12px;
 			text-align: center;
-			font-size: 1.2rem;
+			font-size: 1rem;
 			color:$white; 
 			margin-bottom:50px;
 			text-transform: uppercase;
 			span{
 				padding:14px 30px 10px;
 				border:1px solid darken($white, 40%);
-				background-color:$black;
+				background-color:#03010E;
 			}
 		}
 		.views-row{
@@ -164,6 +197,7 @@
 		background-color: $white;
 		padding:50px 0;
 		width: 100%;
+
 		h2{
 			color:$primary-color;
 			text-transform: uppercase;
@@ -171,11 +205,36 @@
 			border-bottom:1px solid darken($white, 10%);
 			padding-bottom:10px;
 			margin-bottom:10px;
+			min-height:55px;
+			padding-top: 22px;
+		}
+		.last{
+			h2{
+				padding-top:0;
+			}
+		}
+		h3{
+			font-size: 1rem;
+			margin-bottom: 0;
+			text-transform: uppercase;
+			font-family: $body-font-family;
+			font-weight:700;
 		}
 		p, li{
 			font-size: 0.8rem;
 		}
-		button{
+		ul{
+			margin-left:0;
+			li{
+				list-style: none;
+				background-image:url(../images/checkmark.png);
+				background-repeat: no-repeat;
+				background-position:top left;
+				padding-left:20px;
+			}	
+		}
+		
+		.button{
 			background-color:$secondary-color;
 			padding:10px 40px;
 			text-transform: uppercase;
@@ -185,6 +244,9 @@
 			&:hover{
 				background-color:darken($secondary-color, 10%);
 			}
+		}
+		.block-block-3{
+			margin-top:5px;
 		}
 		#instafeed{
 			a{
@@ -209,7 +271,7 @@
 		}
 	}
 	.l-main{
-		padding-top:100px;
+		padding-top:60px;
 	}
 	h1{
 		text-transform: uppercase;
@@ -354,7 +416,7 @@
 	}
 
 	.sidebar-second{
-		margin-top: 74px;
+		margin-top: 69px;
 		.instagram-block{
 			margin-bottom:2rem;
 			h2{
@@ -407,9 +469,11 @@
 
 // MEDIUM SCREENS AND DOWN
 @media only screen and (max-width: 40em) { 
-	.l-main{
+	.l-main, .flexslider{
 		img{
-			width:100%;
+			width:150%;
+			max-width:150%;
+			margin-left:-25%;
 		}	
 	}
 	
