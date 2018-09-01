@@ -1138,17 +1138,17 @@ $topbar-bg-color: $black;
 
 // Style the top bar dropdown elements
 $topbar-dropdown-bg: $black;
-$topbar-dropdown-link-color: $white;
+$topbar-dropdown-link-color: darken($white, 10%);
 $topbar-dropdown-link-bg: $black;
 // $topbar-dropdown-link-weight: normal;
 // $topbar-dropdown-toggle-size: 5px;
-$topbar-dropdown-toggle-color: $white;
+$topbar-dropdown-toggle-color: darken($white, 10%);
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: $white;
+$topbar-link-color: darken($white, 10%);
 $topbar-link-color-hover: $white;
-$topbar-link-color-active: $white;
+$topbar-link-color-active: darken($white, 10%);
 $topbar-link-color-active-hover: $white;
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);

@@ -354,7 +354,7 @@ body.front{
 						color:lighten($secondary-color, 40%);
 						font-size: 0.8rem;
 					}
-					.views-field-created{
+					.views-field-created, .views-field-field-date .field-content{
 						position:absolute;
 						background-color:$secondary-color;
 						padding:5px 10px;
@@ -389,12 +389,51 @@ body.front{
 	}
 	.view-display-id-page_events{
 		p{
-			font-size: 0.8rem;
+			//font-size: 0.8rem;
 			margin:25px 0 50px;
 		}
 	}
 
 	.view-display-id-page_gallery{
+		.view-content{
+			margin-left: -0.625rem;
+			margin-right: -0.625rem;
+			margin-top: 0;
+			margin-bottom: 0;
+			max-width: 62.5rem;
+			&:after{
+				clear: both;
+			}
+			&:after, &:before{
+				content: " ";
+				display: table;
+			}
+		}
+		a{
+			overflow: hidden;
+		}
+		.views-row{
+			float:left;
+			width: 33.333%;
+			position: relative;
+			padding-left: 0.625rem;
+			padding-right: 0.625rem;
+			float: left;
+			margin-bottom:0.625rem * 2;
+			max-height: 150px;
+			overflow: hidden;
+			@include transition;
+			//overflow: hidden;
+			//border:1px solid lighten($black, 20%);
+			img{
+				@include transition;
+				width:100%;
+				&:hover{
+					width:100%;
+					opacity:0.8;
+				}
+			}
+		}
 		.views-field-field-image{
 			@include transition;
 			overflow: hidden;
@@ -467,6 +506,13 @@ body.front{
 	}
 }
 
+.page-gallery{
+	.reveal-modal{
+		background-color: $black;
+		border: none;
+	}
+}
+
 // MEDIUM SCREENS AND DOWN
 @media only screen and (max-width: 40em) { 
 	.l-main, .flexslider{
@@ -486,4 +532,8 @@ body.front{
 	[class*="block-grid-"]>li{
 		float:none;
 	}
+}
+
+.hide{
+	display: none;
 }

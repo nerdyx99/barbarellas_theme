@@ -60,7 +60,7 @@ scripts[] = js/foundation.min.js
 ;scripts[] = js/foundation/foundation.magellan.js
 ;scripts[] = js/foundation/foundation.orbit.js
 ;scripts[] = js/foundation/foundation.placeholder.js
-;scripts[] = js/foundation/foundation.reveal.js
+scripts[] = js/foundation/foundation.reveal.js
 ;scripts[] = js/foundation/foundation.section.js
 ;scripts[] = js/foundation/foundation.tooltips.js
 scripts[] = js/foundation/foundation.topbar.js
@@ -104,6 +104,8 @@ regions[footer_secondcolumn] = Footer two
 regions[footer_thirdcolumn]  = Footer three
 regions[footer_fourthcolumn] = Footer Fourth
 regions[footer]              = Footer
+
+regions[modals]				 = Modals
 
 ; Various page elements output by the theme can be toggled on and off. The
 ; "features" control which of these check boxes display on the

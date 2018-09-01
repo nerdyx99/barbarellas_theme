@@ -15,8 +15,7 @@
 
 <?php 
 	if($view->current_display == 'block_featured' ||
-		$view->current_display == 'block_events_sub_page' ||
-		$view->current_display == 'page_gallery'){
+		$view->current_display == 'block_events_sub_page'){
 		echo '<ul class="medium-block-grid-3">';
 	}
 	if($view->current_display == 'block_events'){
@@ -29,8 +28,7 @@
 <?php 
 	if( $view->current_display == 'block_featured' ||
 		$view->current_display == 'block_events' ||
-		$view->current_display == 'block_events_sub_page' ||
-		$view->current_display == 'page_gallery'){
+		$view->current_display == 'block_events_sub_page'){
 		echo '<li>';
 	}
 ?>
@@ -42,8 +40,7 @@
 <?php 
 	if( $view->current_display == 'block_featured' ||
 		$view->current_display == 'block_events' ||
-		$view->current_display == 'block_events_sub_page' ||
-		$view->current_display == 'page_gallery'){
+		$view->current_display == 'block_events_sub_page'){
 		echo '</li>';
 	}
 ?>
@@ -54,8 +51,7 @@
 <?php 
 	if( $view->current_display == 'block_featured' ||
 		$view->current_display == 'block_events' ||
-		$view->current_display == 'block_events_sub_page' ||
-		$view->current_display == 'page_gallery'){
+		$view->current_display == 'block_events_sub_page'){
 		echo '</ul>';
 	}
 ?>

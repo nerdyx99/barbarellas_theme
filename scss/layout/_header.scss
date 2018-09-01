@@ -69,19 +69,25 @@ header.l-header{
 					float: none;
 					padding:0 20px;
 					a{
-						//margin-bottom:3px;
 						border-bottom:3px solid $black;
 						text-transform: uppercase;
 						font-size: 0.7rem;
+						color:darken($white, 20%)!important;
 						@include transition;
 						&:hover{
 							border-bottom:3px solid $primary-color;
-							//margin-bottom:0;
+							//background-color:lighten($black, 5%)!important;
+							color:$white!important;
 						}
 					}
 					a.active{
 						border-bottom:3px solid $primary-color;
 						margin-bottom:0;
+						color:darken($white, 20%)!important;
+						@include transition;
+						&:hover{
+							color:$white!important;
+						}
 					}
 				}	
 			}

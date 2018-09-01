@@ -9,7 +9,7 @@ function barbarellas_preprocess_html(&$variables) {
 
   drupal_add_css('http://fonts.googleapis.com/css?family=Alegreya:700italic,400,700,900', array('type' => 'external'));
 
-  drupal_add_js(drupal_get_path('theme', 'barbarellas') .'/js/custom.js');
+  //drupal_add_js(drupal_get_path('theme', 'barbarellas') .'/js/custom.js');
 
 //  // Add conditional CSS for IE. To use uncomment below and add IE css file
 //  drupal_add_css(path_to_theme() . '/css/ie.css', array('weight' => CSS_THEME, 'browsers' => array('!IE' => FALSE), 'preprocess' => FALSE));

@@ -67,9 +67,9 @@
 
 .l-footer{
 	background-color: $black;
-	padding:50px 0;
+	padding:30px 0;
 	color:darken($white, 30%);
-	text-align:center;
+	//text-align:center;
 	font-size: 0.8rem;
 	
 }
@@ -97,3 +97,22 @@
 		width:87.33333%;
 	}
 }
+
+.atomiq-logo{
+	a{
+		img{
+			width:50px;
+			opacity: 0.3;
+			@include transition;
+			&:hover{
+				opacity:0.5;
+			}
+		}
+	}
+	
+}
+
+.copyright-text{
+	margin-top:20px;
+}
+

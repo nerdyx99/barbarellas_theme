@@ -37,8 +37,8 @@
   <?php if($is_front): ?>
     <div class="flexslider">
       <ul class="slides">
-        <li><img src="<?php echo $base_path . $path_to_barbarellas; ?>/images/main-bg-01.jpg"></li>
-        <li><img src="<?php echo $base_path . $path_to_barbarellas; ?>/images/main-bg-02.jpg"></li>
+        <li><img src="<?php echo $base_path . $path_to_barbarellas?>/images/main-bg-01.jpg"></li>
+        <li><img src="<?php echo $base_path . $path_to_barbarellas?>/images/main-bg-02.jpg"></li>
       </ul>
     </div>
 
@@ -139,7 +139,7 @@
       <?php if (!empty($page['sidebar_second'])): ?>
         <aside role="complementary" class="<?php print $sidebar_sec_grid; ?> sidebar-second columns sidebar">
           <div class="instagram-block">
-            <h2><img class="" src="<?php echo $base_path . $path_to_barbarellas?>/images/icon-instagram.png">&nbsp;&nbsp;#barbarellasvipgirls</h2>
+            <h2><img class="" src="<?php echo $base_path . $path_to_barbarellas?>/images/icon-instagram.png">&nbsp;&nbsp;@barbarellasottawa</h2>
             <div id="instafeed"></div>  
           </div>
           <?php print render($page['sidebar_second']); ?>
@@ -158,9 +158,8 @@
             <?php print render($page['sub_section_2']); ?>
           </div>
           <div class="medium-4 columns animate last">
-            <h2><img class="" src="<?php echo $base_path . $path_to_barbarellas?>/images/icon-instagram.png">&nbsp;&nbsp;#barbarellasvipgirls</h2>
-            <div id="instafeed"></div>
-            
+            <h2><img class="" src="<?php echo $base_path . $path_to_barbarellas?>/images/icon-instagram.png">&nbsp;&nbsp;@barbarellasottawa</h2>
+            <div id="instafeed"></div>           
           </div>
         </div>  
       </div>
@@ -209,7 +208,10 @@
 
       <?php if ($site_name) :?>
         <div class="copyright large-12 columns">
-          &copy; <?php print date('Y') . ' ' . check_plain($site_name) . ' ' . t('All rights reserved.'); ?>
+          <div class="left copyright-text">&copy; <?php print date('Y') . ' ' . check_plain($site_name) . ' ' . t('All rights reserved.'); ?></div>
+          <div class="right atomiq-logo">
+            <a href="http://atomiq.ca"><img src="<?php echo $base_path . $path_to_barbarellas?>/images/atomiq_logo.svg" alt="Atomiq - Web design. Gatineau, Ottawa"></a>
+          </div>
         </div>
       <?php endif; ?>
     </div>
@@ -221,4 +223,12 @@
 <!--/.page -->
 
 
+
+
+<?php if (!empty($page['modals'])): ?>
+  <div class="gallery-modal">
+    <?php print render($page['modals']); ?>
+  </div>
+  <!-- <div id="myModal" class="reveal-modal" data-reveal></div> -->
+<?php endif; ?>
 

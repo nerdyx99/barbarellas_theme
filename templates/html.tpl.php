@@ -65,8 +65,32 @@
   <?php print $page_bottom; ?>
   <?php print _zurb_foundation_add_reveals(); ?>
 
+  <!-- <a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
+
+  <div id="myModal" class="reveal-modal" data-reveal>
+    <h2>Awesome. I have it.</h2>
+    <p class="lead">Your couch.  It is mine.</p>
+    <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+    <a class="close-reveal-modal">&#215;</a>
+  </div> -->
+
   <script>
     (function ($, Drupal, window, document, undefined) {
+
+      $('.view-display-id-page_gallery .views-row').each(function(i){
+        $(this).wrap('<a href="#" data-reveal-id="galleryModal-'+ i +'">');
+        i++;
+      });
+
+      $('.gallery-modal .views-row').each(function(i){
+        // i = i+1;
+        $(this).wrap('<div id="galleryModal-'+ i +'" class="reveal-modal small" data-reveal>');
+        $(this).find('.reveal-modal').append('<a class="close-reveal-modal">&#215;</a>');
+        i++;
+      });
+
+      
+
       $(document).foundation();
 
       $('.flexslider').flexslider({
@@ -106,13 +130,42 @@
 
       ///////////////
 
+      // var userFeed = new Instafeed({
+      //   get: 'tagged',
+      //   clientId: '8935540bd06d417bb9a5de1799e448f9',
+      //   tagName: 'webdesign',
+      //   resolution: 'low_resolution',
+      //   template: '<div id={{model.user.username}} style="display: none;"><a href="{{link}}"><img src="{{image}}" /></a></div>'
+      //   //after: function () {document.getElementById("helen_hulbert").style.display = 'block';}
+      // });
+      // userFeed.run();
+
+      // var userFeed = new Instafeed({
+      //   clientId: '8935540bd06d417bb9a5de1799e448f9',
+      //   get: 'tagged',
+      //   tagName: 'barbarellas',
+      //   links: true,
+      //   limit: 1,
+      //   sortBy: 'most-recent',
+      //   resolution: 'standard_resolution',
+      //   template: '<div><a href="{{link}}"><img src="{{image}}" /></a></div>'
+      //   // template: '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"><div class="photo-box"><div class="image-wrap"><a href="{{link}}"><img src="{{image}}"></a><div class="likes">{{likes}} Likes</div></div><div class="description">{{caption}}<div class="date">{{model.date}}</div></div></div></div>'
+      // });
+      // userFeed.run();
+
+
       var userFeed = new Instafeed({
-        get: 'tagged',
-        clientId: '8935540bd06d417bb9a5de1799e448f9',
-        tagName: 'barbarellas',
+        //clientId: '8935540bd06d417bb9a5de1799e448f9',
+        get: 'user',
+        userId: 1722765464, // id barbarellas
+        accessToken: '1722765464.467ede5.2ef24b6dcd6b4db39295b52e20305042',
         resolution: 'low_resolution',
-        template: '<div id={{model.user.username}} style="display: none;"><a href="{{link}}"><img src="{{image}}" /></a></div>',
-        after: function () {document.getElementById("helen_hulbert").style.display = 'block';}
+        limit: 1,
+        sortBy: 'most-recent',
+        // filter: function(image) {
+        //   return image.tags.indexOf('atomiq') >= 0;
+        // },
+        template: '<div><a href="{{link}}"><img src="{{image}}" /></a></div>'
       });
       userFeed.run();
 
